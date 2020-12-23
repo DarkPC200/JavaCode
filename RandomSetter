@@ -1,0 +1,38 @@
+import java.util.*;
+import java.util.Random;
+
+class Human {
+	String name;
+	int age;
+	String gender;
+	// object data
+	Random rnd = new Random(); // create random object
+	String[] genderList = {"male", "female"};
+	// set a random age
+	public int Ageset() {
+		int c = rnd.nextInt(100); // from 0 to 99
+		return c;
+	}
+	// set a random gender
+	public String Genderset() {
+		int g = rnd.nextInt(2);
+		String gen = genderList[g];
+		return gen;
+	}
+	// just name
+	Human(String name_) {
+		name = name_;
+		age = Ageset();
+		gender = Genderset();
+	}
+}
+
+public class JavaCode {
+	public static void main(String[] args) {	
+		Human P1 = new Human("issam");
+		Human P2 = new Human("houda");
+
+		System.out.println(P1.age + " & " + P1.gender);
+		System.out.println(P2.age + " & " + P1.gender);
+	}
+}
